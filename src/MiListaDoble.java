@@ -7,6 +7,9 @@ public class MiListaDoble implements ListInterface{
     @Override
     public int getSize() {
         return 0;
+
+
+
     }
 
     @Override
