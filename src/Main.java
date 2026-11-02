@@ -1,13 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+    public static void main(String[] args) {
+
+        MiListaDoble numbers = new MiListaDoble();
+
+        numbers.add(8);
+        numbers.add(3);
+        numbers.add(12);
+        numbers.add(5);
+        numbers.insertHead(1);
+        numbers.insertTail(9);
+
+        System.out.println("Original list:");
+        printList(numbers);
+
+        System.out.println("Size: " + numbers.getSize());
+        System.out.println("Head: " + numbers.getHead());
+        System.out.println("Tail: " + numbers.getTail());
+        System.out.println("Contains 12: " + numbers.contains(12));
+
+        MiListaDoble sortedNumbers = numbers.sortList();
+
+        System.out.println("\nSorted list:");
+        printList(sortedNumbers);
+    }
+
+    public static void printList(MiListaDoble list) {
+
+        Object[] elements = list.toArray();
+
+        for (int i = 0; i < elements.length; i++) {
+            System.out.print(elements[i] + " ");
+        }
+
+        System.out.println();
     }
 }
